@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AppPrueba</string>
+    <string name="tituloLibro">Titulo Libro</string>
+    <string name="autorLibro">Autor Libro</string>
+    <string name="ciudadDetalle">País</string>
+    <string name="paginas">Páginas</string>
+    <string name="año">Año</string>
+    <string name="lenguaje">Lenguaje</string>
+    <string name="precios">Precio</string>
+</resources>
