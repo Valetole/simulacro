@@ -1,5 +1,7 @@
 package cl.valentina.appprueba
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
@@ -20,6 +22,7 @@ class LibroDetalle : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(LibroDetalleViewModel::class.java)
 
         inicioUI()
+        envioCorreo()
 
     }
 
@@ -41,5 +44,17 @@ class LibroDetalle : AppCompatActivity() {
             Glide.with(this).load(libroDetalle.imageLink).into(imagenDetalle)
 
         })
+    }
+    private fun envioCorreo() {
+        botonCorreo.setOnClickListener{
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.data = Uri.parse("mailto:")
+            intent.type= "text/plain"
+                intent.putExtra(Intent.EXTRA_EMAIL,"ventas@anchorBooks.cl")
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Consulta por libro")
+            startActivity(intent)
+
+
+        }
     }
 }
